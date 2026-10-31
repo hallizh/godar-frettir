@@ -93,3 +93,15 @@ json.dump({"verdicts": [{"id": "a", "score": 8, "good_news": True, "category": "
     arts = [{"id": "a", "source": "s", "lang": "is", "title": "t", "excerpt": "e"}]
     result = classify.classify(arts, provider="codex")
     assert result["a"].category == "innlent" and classify.is_published(result["a"])
+
+
+def test_stops_after_first_batch_fails(monkeypatch):
+    calls = []
+
+    def boom(batch):
+        calls.append(batch)
+        raise RuntimeError("401")
+    monkeypatch.setattr(classify, "classify_batch_codex", boom)
+    arts = [{"id": str(i), "source": "s", "lang": "is", "title": "t", "excerpt": "e"} for i in range(40)]
+    assert classify.classify(arts, provider="codex") == {}
+    assert len(calls) == 1

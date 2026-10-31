@@ -2,7 +2,7 @@ name: Uppfæra fréttir
 
 on:
   schedule:
-    - cron: "17 * * * *"   # á klukkutíma fresti
+    - cron: "*/15 * * * *"   # á 15 mínútna fresti
   workflow_dispatch:
   push:
     branches: [main]

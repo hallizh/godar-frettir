@@ -2,7 +2,7 @@
 
 Íslensk fréttasíða sem birtir eingöngu góðar, vonarríkar og uppörvandi fréttir.
 
-Á klukkutíma fresti keyrir GitHub Action sem:
+Á 15 mínútna fresti keyrir GitHub Action sem:
 
 1. sækir nýjar greinar úr RSS-veitum íslenskra og erlendra miðla (`godar/sources.py`),
 2. lætur gervigreind (Codex eða Claude) meta hverja grein: er þetta góð frétt (einkunn 0–10), í hvaða flokk fer hún, og stutt samantekt á íslensku (`godar/classify.py`),
@@ -20,7 +20,7 @@ Sjálfgefið er notuð Codex-innskráning (ChatGPT-áskrift), svo enginn API-lyk
      Codex endurnýjar innskráninguna reglulega og gamla útgáfan hættir þá að virka, svo keyrslan
      vistar nýju útgáfuna aftur í `CODEX_AUTH_JSON` með þessum token.
 3. **Settings → Pages**: veldu *Source: GitHub Actions*.
-4. Keyrðu *Uppfæra fréttir* handvirkt undir **Actions**, eða bíddu eftir næstu heilu klukkustund.
+4. Keyrðu *Uppfæra fréttir* handvirkt undir **Actions**, eða bíddu í mesta lagi 15 mínútur.
 
 Ef innskráningin rennur samt út: keyrðu `codex login` aftur og settu nýja `auth.json` í `CODEX_AUTH_JSON`.
 
@@ -43,6 +43,6 @@ python -m pytest            # prófanir
 | `GODAR_PROVIDER` | `codex` | `codex` (ChatGPT-innskráning) eða `claude` (Anthropic API-lykill) |
 | `GODAR_MODEL` | sjálfgefið líkan Codex / `claude-opus-5-5` | Líkanið sem metur fréttirnar |
 | `GODAR_MIN_SCORE` | `7` | Lágmarkseinkunn til að frétt birtist |
-| `--limit` | `150` | Hámark nýrra greina sem eru metnar í hverri keyrslu |
+| `--limit` | `500` | Hámark nýrra greina sem eru metnar í hverri keyrslu |
 
 Flokkar eru skilgreindir í `godar/categories.py` og fréttaveitur í `godar/sources.py`.

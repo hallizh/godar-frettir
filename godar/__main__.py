@@ -56,7 +56,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(prog="godar")
     parser.add_argument("command", choices=["run", "demo"])
     parser.add_argument("--out", type=Path, default=ROOT / "site")
-    parser.add_argument("--limit", type=int, default=150, help="hámarksfjöldi nýrra greina sem eru metnar í hverri keyrslu")
+    parser.add_argument("--limit", type=int, default=500, help="hámarksfjöldi nýrra greina sem eru metnar í hverri keyrslu")
     args = parser.parse_args()
     if args.command == "run":
         run(args.out, args.limit)

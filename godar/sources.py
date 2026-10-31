@@ -8,7 +8,6 @@ SOURCES = [
     {"name": "RÚV", "url": "https://www.ruv.is/rss/frettir", "lang": "is"},
     {"name": "mbl.is", "url": "https://www.mbl.is/feeds/innlent/", "lang": "is"},
     {"name": "mbl.is", "url": "https://www.mbl.is/feeds/erlent/", "lang": "is"},
-    {"name": "mbl.is", "url": "https://www.mbl.is/feeds/taekni/", "lang": "is"},
     {"name": "Vísir", "url": "https://www.visir.is/rss/allt", "lang": "is"},
     {"name": "DV", "url": "https://www.dv.is/feed/", "lang": "is"},
     # Erlendir miðlar sem sérhæfa sig í góðum fréttum

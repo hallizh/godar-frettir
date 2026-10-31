@@ -5,6 +5,7 @@ import logging
 import os
 import subprocess
 import tempfile
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Literal
 
@@ -20,6 +21,7 @@ PROVIDER = os.environ.get("GODAR_PROVIDER", "codex")
 MODEL = os.environ.get("GODAR_MODEL", "claude-opus-5-5" if PROVIDER == "claude" else "")
 CODEX_BIN = os.environ.get("GODAR_CODEX_BIN", "codex")
 BATCH_SIZE = 15
+WORKERS = int(os.environ.get("GODAR_WORKERS", "4"))  # samhliða lotur
 MIN_SCORE = int(os.environ.get("GODAR_MIN_SCORE", "7"))
 
 CategoryKey = Literal[tuple(CATEGORIES)]  # type: ignore[valid-type]
@@ -103,7 +105,8 @@ def classify_batch_codex(articles: list[dict], timeout: int = 600) -> list[Verdi
         prompt = SYSTEM + "\n\nSvaraðu eingöngu með JSON samkvæmt skemanu. Ekki keyra neinar skipanir.\n\n" + _batch_prompt(articles)
         proc = subprocess.run(cmd, input=prompt, capture_output=True, text=True, timeout=timeout)
         if proc.returncode != 0 or not out.exists():
-            raise RuntimeError(f"codex exec mistókst ({proc.returncode}): {proc.stderr[-2000:]}")
+            errors = [line for line in proc.stderr.splitlines() if "ERROR" in line and "Reconnecting" not in line]
+            raise RuntimeError(f"codex exec mistókst ({proc.returncode}): {' | '.join(errors[-2:])[:500]}")
         return _keep_known(BatchVerdicts.model_validate_json(out.read_text()).verdicts, articles)
 
 
@@ -127,16 +130,30 @@ def classify(articles: list[dict], client: anthropic.Anthropic | None = None,
     """Skilar mati fyrir hverja grein sem tókst að meta, eftir id."""
     if provider == "claude":
         client = client or anthropic.Anthropic()
+
+    def run_batch(batch: list[dict]) -> list[Verdict]:
+        return classify_batch(client, batch) if provider == "claude" else classify_batch_codex(batch)
+
+    batches = [articles[i:i + BATCH_SIZE] for i in range(0, len(articles), BATCH_SIZE)]
     results: dict[str, Verdict] = {}
-    for start in range(0, len(articles), BATCH_SIZE):
-        batch = articles[start:start + BATCH_SIZE]
+    errors = (anthropic.APIError, RuntimeError, subprocess.TimeoutExpired, ValueError)
+
+    def collect(index: int, batch: list[dict]) -> bool:
         try:
-            verdicts = classify_batch(client, batch) if provider == "claude" else classify_batch_codex(batch)
-        except (anthropic.APIError, RuntimeError, subprocess.TimeoutExpired, ValueError) as exc:
-            log.error("Villa við mat á lotu %d: %s", start // BATCH_SIZE, exc)
-            continue
+            verdicts = run_batch(batch)
+        except errors as exc:
+            log.error("Villa við mat á lotu %d: %s", index, exc)
+            return False
         for verdict in verdicts:
             results[verdict.id] = verdict
+        return True
+
+    # Fyrsta lotan ein og sér: ef hún bregst (t.d. útrunnin innskráning) er tilgangslaust að reyna hinar
+    if not batches or not collect(0, batches[0]):
+        return results
+    with ThreadPoolExecutor(max_workers=WORKERS) as pool:
+        ok = 1 + sum(pool.map(collect, range(1, len(batches)), batches[1:]))
+    log.info("%d af %d lotum tókust", ok, len(batches))
     return results
 
 
