@@ -18,7 +18,7 @@ log = logging.getLogger(__name__)
 
 # "codex" notar innskráningu Codex CLI (ChatGPT-áskrift), "claude" notar ANTHROPIC_API_KEY
 PROVIDER = os.environ.get("GODAR_PROVIDER", "codex")
-MODEL = os.environ.get("GODAR_MODEL") or ("claude-opus-5-5" if PROVIDER == "claude" else "gpt-6.1-luna")
+MODEL = os.environ.get("GODAR_MODEL") or ("claude-opus-5-5" if PROVIDER == "claude" else "gpt-6-luna")
 # Hugsunardýpt Codex; medium er nóg til að meta fréttir og mun sneggra en high
 EFFORT = os.environ.get("GODAR_EFFORT") or "medium"
 CODEX_BIN = os.environ.get("GODAR_CODEX_BIN", "codex")
