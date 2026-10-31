@@ -41,7 +41,7 @@ python -m pytest            # prófanir
 | Breyta | Sjálfgefið | Lýsing |
 |---|---|---|
 | `GODAR_PROVIDER` | `codex` | `codex` (ChatGPT-innskráning) eða `claude` (Anthropic API-lykill) |
-| `GODAR_MODEL` | `gpt-6-luna` / `claude-opus-5-5` | Líkanið sem metur fréttirnar |
+| `GODAR_MODEL` | `gpt-6.1-terra` / `claude-opus-5-5` | Líkanið sem metur fréttirnar |
 | `GODAR_EFFORT` | `medium` | Hugsunardýpt Codex (`low`, `medium`, `high`) |
 | `GODAR_MIN_SCORE` | `7` | Lágmarkseinkunn til að frétt birtist |
 | `--limit` | `500` | Hámark nýrra greina sem eru metnar í hverri keyrslu |
