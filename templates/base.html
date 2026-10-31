@@ -7,37 +7,40 @@
   <meta name="description" content="Góðar, vonarríkar og uppörvandi fréttir frá Íslandi og víðar, teknar saman á íslensku.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ base }}static/style.css">
   <link rel="icon" href="{{ base }}static/sol.svg" type="image/svg+xml">
 </head>
 <body>
-  <header class="masthead">
-    <div class="wrap masthead-inner">
+  <header class="top">
+    <div class="wrap top-inner">
       <a class="brand" href="{{ base }}index.html">
-        <img src="{{ base }}static/sol.svg" alt="" width="34" height="34">
+        <img src="{{ base }}static/sol.svg" alt="" width="28" height="28">
         <span>Góðar fréttir</span>
       </a>
-      <p class="tagline">Það sem gengur vel í heiminum</p>
+      <span class="date">{{ today }}</span>
     </div>
-    <nav class="cats" aria-label="Flokkar">
-      <div class="wrap cats-inner">
-        <a href="{{ base }}index.html" {% if active is none %}aria-current="page"{% endif %}>Nýjast</a>
+    <nav class="nav" aria-label="Flokkar">
+      <div class="wrap nav-inner">
+        <a href="{{ base }}index.html" {% if active is none %}aria-current="page"{% endif %}>Forsíða</a>
         {% for key, label in categories.items() %}
-        <a href="{{ base }}flokkur/{{ key }}.html" {% if active == key %}aria-current="page"{% endif %}>{{ label }}</a>
+        <a class="c-{{ key }}" href="{{ base }}flokkur/{{ key }}.html" {% if active == key %}aria-current="page"{% endif %}>{{ label }}</a>
         {% endfor %}
       </div>
     </nav>
   </header>
   {% if demo %}
-  <div class="demo-banner">Sýnigögn: þetta eru tilbúnar prufufréttir, ekki raunverulegar fréttir.</div>
+  <div class="demo-banner">Sýnigögn: tilbúnar prufufréttir og myndir, ekki raunverulegar fréttir.</div>
   {% endif %}
   <main class="wrap">
     {% block content %}{% endblock %}
   </main>
-  <footer class="wrap footer">
-    <p>Fréttirnar eru valdar og teknar saman sjálfvirkt með gervigreind úr opnum fréttaveitum. Smelltu á frétt til að lesa hana í heild hjá upprunalega miðlinum.</p>
-    <p>Síðast uppfært {{ updated }} · <a href="{{ base }}um.html">Um síðuna</a></p>
+  <footer class="footer">
+    <div class="wrap">
+      <a class="brand small" href="{{ base }}index.html"><img src="{{ base }}static/sol.svg" alt="" width="20" height="20"><span>Góðar fréttir</span></a>
+      <p>Fréttirnar eru valdar og teknar saman sjálfvirkt með gervigreind úr opnum fréttaveitum. Smelltu á frétt til að lesa hana í heild hjá upprunalega miðlinum.</p>
+      <p>Síðast uppfært {{ updated }} · <a href="{{ base }}um.html">Um síðuna</a></p>
+    </div>
   </footer>
 </body>
 </html>

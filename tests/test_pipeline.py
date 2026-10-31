@@ -63,3 +63,12 @@ def test_build_writes_pages(tmp_path):
 
 def test_time_ago():
     assert time_ago(1000, 1000 + 3 * 3600) == "fyrir 3 klst."
+
+
+def test_image_from_summary_html_and_og_regex():
+    rss = """<?xml version="1.0"?><rss version="2.0"><channel><item><title>T</title><link>https://a.is/2</link>
+<description>&lt;img src="https://a.is/mynd.jpg"&gt; texti</description></item></channel></rss>""".encode()
+    assert parse_feed(rss, {"name": "x", "lang": "is"})[0]["image"] == "https://a.is/mynd.jpg"
+    from godar.fetch import OG_RE
+    m = OG_RE.search('<meta content="/m.jpg" property="og:image">')
+    assert (m.group(1) or m.group(2)) == "/m.jpg"

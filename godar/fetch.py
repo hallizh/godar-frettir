@@ -6,6 +6,7 @@ import html
 import logging
 import re
 import time
+import urllib.parse
 import urllib.request
 
 import feedparser
@@ -15,6 +16,12 @@ log = logging.getLogger(__name__)
 USER_AGENT = "GodarFrettirBot/0.1 (+https://github.com/hallizh/godar-frettir)"
 TAG_RE = re.compile(r"<[^>]+>")
 WS_RE = re.compile(r"\s+")
+IMG_RE = re.compile(r"<img[^>]+src=[\"']([^\"']+)", re.I)
+OG_RE = re.compile(
+    r"<meta[^>]+(?:property|name)=[\"'](?:og:image|twitter:image)(?::src)?[\"'][^>]*content=[\"']([^\"']+)"
+    r"|<meta[^>]+content=[\"']([^\"']+)[\"'][^>]*(?:property|name)=[\"'](?:og:image|twitter:image)[\"']",
+    re.I,
+)
 
 
 def article_id(link: str) -> str:
@@ -34,6 +41,24 @@ def _image(entry) -> str | None:
     for enc in entry.get("enclosures") or []:
         if enc.get("type", "").startswith("image/") and enc.get("href"):
             return enc["href"]
+    # Margir miðlar setja myndina inn í HTML-útdráttinn í staðinn
+    for block in [entry.get("summary", "")] + [c.get("value", "") for c in entry.get("content") or []]:
+        if match := IMG_RE.search(block or ""):
+            return html.unescape(match.group(1))
+    return None
+
+
+def find_og_image(url: str, timeout: int = 15) -> str | None:
+    """Sækir forsíðumynd fréttar (og:image) úr greininni sjálfri þegar veitan gefur enga mynd."""
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            head = resp.read(300_000).decode(resp.headers.get_content_charset() or "utf-8", "replace")
+    except Exception as exc:
+        log.info("Engin mynd fyrir %s: %s", url, exc)
+        return None
+    if match := OG_RE.search(head):
+        return urllib.parse.urljoin(url, html.unescape(match.group(1) or match.group(2)))
     return None
 
 

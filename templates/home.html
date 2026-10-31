@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% from "macros.html" import lead, card, row %}
+{% block content %}
+{% if not articles %}
+<p class="empty">Engar góðar fréttir enn sem komið er. Kíktu aftur bráðum.</p>
+{% else %}
+<section class="hero">
+  {{ lead(articles[0], base, categories) }}
+  <div class="side">
+    {% for a in articles[1:5] %}{{ row(a, base, categories) }}{% endfor %}
+  </div>
+</section>
+
+{% if articles[5:13] %}
+<section class="block">
+  <h2 class="block-title">Nýjast</h2>
+  <div class="grid">
+    {% for a in articles[5:13] %}{{ card(a, base, categories) }}{% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% for key, items in sections %}
+<section class="block">
+  <h2 class="block-title c-{{ key }}"><a href="{{ base }}flokkur/{{ key }}.html">{{ categories[key] }}</a><a class="more" href="{{ base }}flokkur/{{ key }}.html">Sjá allt</a></h2>
+  <div class="grid">
+    {% for a in items %}{{ card(a, base, categories, summary=False) }}{% endfor %}
+  </div>
+</section>
+{% endfor %}
+{% endif %}
+{% endblock %}

@@ -14,7 +14,7 @@ log = logging.getLogger("godar")
 
 def run(out: Path, limit: int) -> None:
     from .classify import MODEL, classify, is_published
-    from .fetch import fetch_all
+    from .fetch import fetch_all, find_og_image
     from .sources import SOURCES
 
     store = Store()
@@ -32,6 +32,8 @@ def run(out: Path, limit: int) -> None:
             continue  # metum aftur í næstu keyrslu
         store.mark_seen(article["id"])
         if is_published(verdict):
+            if not article["image"]:
+                article["image"] = find_og_image(article["link"])
             store.add({**article, **verdict.model_dump(exclude={"id", "reason", "good_news"})})
             published += 1
     log.info("%d af %d metnum greinum birtar", published, len(verdicts))

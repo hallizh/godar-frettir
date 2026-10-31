@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% from "macros.html" import lead, card %}
+{% block title %}{{ heading }} · Góðar fréttir{% endblock %}
+{% block content %}
+<h1 class="page-title c-{{ active }}">{{ heading }}</h1>
+{% if not articles %}
+<p class="empty">Engar góðar fréttir í þessum flokki enn sem komið er. Kíktu aftur bráðum.</p>
+{% else %}
+<div class="wide">{{ lead(articles[0], base, categories) }}</div>
+<div class="grid spaced">
+  {% for a in articles[1:] %}{{ card(a, base, categories) }}{% endfor %}
+</div>
+{% endif %}
+{% endblock %}

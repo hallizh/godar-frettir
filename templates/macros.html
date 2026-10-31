@@ -1,0 +1,54 @@
+{% macro img(a, base) -%}
+{%- if not a.image -%}{{ base }}static/flokkar/{{ a.category }}.svg
+{%- elif a.image.startswith("http") -%}{{ a.image }}
+{%- else -%}{{ base }}{{ a.image }}{%- endif -%}
+{%- endmacro %}
+
+{% macro chip(a, base, categories) -%}
+<a class="chip c-{{ a.category }}" href="{{ base }}flokkur/{{ a.category }}.html">{{ categories[a.category] }}</a>
+{%- endmacro %}
+
+{% macro meta(a) -%}
+<div class="meta">{{ a.source }} · {{ a.published | ago }}{% if a.lang != "is" %} · <span title="Upprunaleg frétt er á ensku">þýtt</span>{% endif %}</div>
+{%- endmacro %}
+
+{# Stór forsíðufrétt með mynd #}
+{% macro lead(a, base, categories) -%}
+<article class="lead c-{{ a.category }}">
+  <a class="media" href="{{ a.link }}" rel="noopener" target="_blank" tabindex="-1" aria-hidden="true">
+    <img src="{{ img(a, base) }}" alt="" onerror="this.src='{{ base }}static/flokkar/{{ a.category }}.svg'">
+  </a>
+  <div class="text">
+    {{ chip(a, base, categories) }}
+    <h2><a href="{{ a.link }}" rel="noopener" target="_blank">{{ a.title_is }}</a></h2>
+    <p>{{ a.summary_is }}</p>
+    {{ meta(a) }}
+  </div>
+</article>
+{%- endmacro %}
+
+{# Venjulegt fréttaspjald: mynd efst, fyrirsögn og samantekt #}
+{% macro card(a, base, categories, summary=True) -%}
+<article class="card c-{{ a.category }}">
+  <a class="media" href="{{ a.link }}" rel="noopener" target="_blank" tabindex="-1" aria-hidden="true">
+    <img src="{{ img(a, base) }}" alt="" loading="lazy" onerror="this.src='{{ base }}static/flokkar/{{ a.category }}.svg'">
+  </a>
+  {{ chip(a, base, categories) }}
+  <h3><a href="{{ a.link }}" rel="noopener" target="_blank">{{ a.title_is }}</a></h3>
+  {% if summary %}<p>{{ a.summary_is }}</p>{% endif %}
+  {{ meta(a) }}
+</article>
+{%- endmacro %}
+
+{# Lítil frétt í hliðardálki: smámynd til vinstri #}
+{% macro row(a, base, categories) -%}
+<article class="row c-{{ a.category }}">
+  <a class="media" href="{{ a.link }}" rel="noopener" target="_blank" tabindex="-1" aria-hidden="true">
+    <img src="{{ img(a, base) }}" alt="" loading="lazy" onerror="this.src='{{ base }}static/flokkar/{{ a.category }}.svg'">
+  </a>
+  <div>
+    {{ chip(a, base, categories) }}
+    <h3><a href="{{ a.link }}" rel="noopener" target="_blank">{{ a.title_is }}</a></h3>
+  </div>
+</article>
+{%- endmacro %}
