@@ -1,0 +1,89 @@
+:root {
+  --bg: #fdfaf3;
+  --surface: #ffffff;
+  --ink: #1f1d1a;
+  --muted: #6b655c;
+  --line: #ece4d4;
+  --sun: #f59e0b;
+  --sun-soft: #fff4d6;
+  --shadow: 0 1px 2px rgb(60 40 0 / 6%), 0 4px 16px rgb(60 40 0 / 5%);
+  --c-innlent: #2563eb; --c-erlent: #7c3aed; --c-taekni: #0891b2; --c-laekningar: #db2777;
+  --c-visindi: #4f46e5; --c-umhverfi: #16a34a; --c-dyralif: #ca8a04; --c-ithrottir: #ea580c;
+  --c-menning: #9333ea;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17150f; --surface: #211e17; --ink: #f3eee4; --muted: #a59d8e; --line: #353024;
+    --sun-soft: #3a2e10; --shadow: none;
+    --c-innlent: #60a5fa; --c-erlent: #a78bfa; --c-taekni: #22d3ee; --c-laekningar: #f472b6;
+    --c-visindi: #818cf8; --c-umhverfi: #4ade80; --c-dyralif: #facc15; --c-ithrottir: #fb923c;
+    --c-menning: #c084fc;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 16px/1.55 Inter, system-ui, sans-serif;
+}
+a { color: inherit; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+
+.masthead { background: var(--surface); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 10; }
+.masthead-inner { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-top: 14px; padding-bottom: 6px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: Fraunces, Georgia, serif; font-weight: 700; font-size: 1.75rem; letter-spacing: -0.01em; }
+.brand img { align-self: center; }
+.tagline { margin: 0; color: var(--muted); font-size: .9rem; }
+
+.cats-inner { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; padding-bottom: 8px; }
+.cats-inner::-webkit-scrollbar { display: none; }
+.cats a {
+  flex: none; text-decoration: none; font-weight: 500; font-size: .92rem; color: var(--muted);
+  padding: 6px 12px; border-radius: 999px;
+}
+.cats a:hover { color: var(--ink); background: var(--sun-soft); }
+.cats a[aria-current="page"] { color: var(--ink); background: var(--sun-soft); box-shadow: inset 0 -2px 0 var(--sun); }
+
+.demo-banner { background: var(--sun-soft); color: var(--ink); text-align: center; font-size: .88rem; padding: 8px 16px; border-bottom: 1px solid var(--line); }
+
+.section-title { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 1.9rem; margin: 28px 0 18px; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+  box-shadow: var(--shadow); display: flex; flex-direction: column; transition: transform .15s ease;
+}
+.card:hover { transform: translateY(-2px); }
+.thumb { display: block; aspect-ratio: 16 / 9; background: var(--sun-soft); }
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.card h2 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 1.22rem; line-height: 1.25; margin: 0; }
+.card h2 a { text-decoration: none; }
+.card h2 a:hover { text-decoration: underline; text-decoration-color: var(--sun); text-underline-offset: 3px; }
+.card p { margin: 0; color: var(--ink); opacity: .86; font-size: .95rem; }
+.meta { margin-top: auto; padding-top: 6px; display: flex; gap: 6px; align-items: center; color: var(--muted); font-size: .82rem; flex-wrap: wrap; }
+.translated { border: 1px solid var(--line); border-radius: 6px; padding: 0 6px; }
+
+.chip {
+  align-self: flex-start; text-decoration: none; font-size: .72rem; font-weight: 600; letter-spacing: .04em;
+  text-transform: uppercase; color: var(--chip); padding: 2px 9px; border-radius: 999px;
+  background: color-mix(in srgb, var(--chip) 12%, transparent);
+}
+.c-innlent { --chip: var(--c-innlent); } .c-erlent { --chip: var(--c-erlent); } .c-taekni { --chip: var(--c-taekni); }
+.c-laekningar { --chip: var(--c-laekningar); } .c-visindi { --chip: var(--c-visindi); } .c-umhverfi { --chip: var(--c-umhverfi); }
+.c-dyralif { --chip: var(--c-dyralif); } .c-ithrottir { --chip: var(--c-ithrottir); } .c-menning { --chip: var(--c-menning); }
+
+@media (min-width: 760px) {
+  .card.lead { grid-column: 1 / -1; flex-direction: row; }
+  .card.lead.has-img .thumb { flex: 0 0 55%; aspect-ratio: auto; min-height: 320px; }
+  .card.lead .body { padding: 28px 32px; justify-content: center; }
+  .card.lead h2 { font-size: 2rem; }
+  .card.lead p { font-size: 1.05rem; }
+}
+
+.empty { color: var(--muted); padding: 40px 0; }
+.prose { max-width: 680px; }
+.prose p { font-size: 1.05rem; }
+.footer { color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); margin-top: 48px; padding-top: 18px; padding-bottom: 32px; }

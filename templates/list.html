@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}{% if active %}{{ heading }} · {% endif %}Góðar fréttir{% endblock %}
+{% block content %}
+<h1 class="section-title">{{ heading }}</h1>
+{% if not articles %}
+<p class="empty">Engar góðar fréttir í þessum flokki enn sem komið er. Kíktu aftur bráðum.</p>
+{% else %}
+<div class="grid">
+  {% for a in articles %}
+  <article class="card{% if loop.first and active is none %} lead{% endif %}{% if a.image %} has-img{% endif %}">
+    {% if a.image %}
+    <a class="thumb" href="{{ a.link }}" rel="noopener" target="_blank" tabindex="-1" aria-hidden="true">
+      <img src="{{ a.image }}" alt="" loading="lazy">
+    </a>
+    {% endif %}
+    <div class="body">
+      <a class="chip c-{{ a.category }}" href="{{ base }}flokkur/{{ a.category }}.html">{{ categories[a.category] }}</a>
+      <h2><a href="{{ a.link }}" rel="noopener" target="_blank">{{ a.title_is }}</a></h2>
+      <p>{{ a.summary_is }}</p>
+      <div class="meta">
+        <span>{{ a.source }}</span><span aria-hidden="true">·</span><time>{{ a.published | ago }}</time>
+        {% if a.lang != "is" %}<span class="translated" title="Upprunaleg frétt er á ensku">þýtt</span>{% endif %}
+      </div>
+    </div>
+  </article>
+  {% endfor %}
+</div>
+{% endif %}
+{% endblock %}
