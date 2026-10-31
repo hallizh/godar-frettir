@@ -50,6 +50,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GODAR_MODEL: ${{ vars.GODAR_MODEL }}
+          GODAR_EFFORT: ${{ vars.GODAR_EFFORT }}
         run: python -m godar run
 
       # Codex endurnýjar aðgangslykilinn og eldri lykill hættir þá að virka.

@@ -13,7 +13,7 @@ log = logging.getLogger("godar")
 
 
 def run(out: Path, limit: int) -> None:
-    from .classify import MODEL, PROVIDER, classify, is_published
+    from .classify import EFFORT, MODEL, PROVIDER, classify, is_published
     from .fetch import fetch_all, find_og_image
     from .sources import SOURCES
 
@@ -22,7 +22,7 @@ def run(out: Path, limit: int) -> None:
     # Nýjustu fyrst, og takmark á hverja keyrslu svo kostnaður haldist fyrirsjáanlegur
     fresh.sort(key=lambda a: a["published"], reverse=True)
     fresh = fresh[:limit]
-    log.info("%d nýjar greinar til mats með %s %s", len(fresh), PROVIDER, MODEL or "(sjálfgefið líkan)")
+    log.info("%d nýjar greinar til mats með %s %s (%s)", len(fresh), PROVIDER, MODEL, EFFORT)
 
     verdicts = classify(fresh) if fresh else {}
     published = 0

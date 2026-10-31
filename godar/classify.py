@@ -18,7 +18,9 @@ log = logging.getLogger(__name__)
 
 # "codex" notar innskráningu Codex CLI (ChatGPT-áskrift), "claude" notar ANTHROPIC_API_KEY
 PROVIDER = os.environ.get("GODAR_PROVIDER", "codex")
-MODEL = os.environ.get("GODAR_MODEL", "claude-opus-5-5" if PROVIDER == "claude" else "")
+MODEL = os.environ.get("GODAR_MODEL") or ("claude-opus-5-5" if PROVIDER == "claude" else "gpt-6.1-luna")
+# Hugsunardýpt Codex; medium er nóg til að meta fréttir og mun sneggra en high
+EFFORT = os.environ.get("GODAR_EFFORT") or "medium"
 CODEX_BIN = os.environ.get("GODAR_CODEX_BIN", "codex")
 BATCH_SIZE = 15
 WORKERS = int(os.environ.get("GODAR_WORKERS", "4"))  # samhliða lotur
@@ -100,8 +102,7 @@ def classify_batch_codex(articles: list[dict], timeout: int = 600) -> list[Verdi
         schema.write_text(json.dumps(CODEX_SCHEMA))
         cmd = [CODEX_BIN, "exec", "--ephemeral", "--skip-git-repo-check", "--sandbox", "read-only",
                "--cd", tmp, "--output-schema", str(schema), "--output-last-message", str(out), "-"]
-        if MODEL:
-            cmd[2:2] = ["--model", MODEL]
+        cmd[2:2] = ["--model", MODEL, "-c", f'model_reasoning_effort="{EFFORT}"']
         prompt = SYSTEM + "\n\nSvaraðu eingöngu með JSON samkvæmt skemanu. Ekki keyra neinar skipanir.\n\n" + _batch_prompt(articles)
         proc = subprocess.run(cmd, input=prompt, capture_output=True, text=True, timeout=timeout)
         if proc.returncode != 0 or not out.exists():
