@@ -3,6 +3,9 @@
 import json
 import logging
 import os
+import subprocess
+import tempfile
+from pathlib import Path
 from typing import Literal
 
 import anthropic
@@ -12,7 +15,10 @@ from .categories import CATEGORIES
 
 log = logging.getLogger(__name__)
 
-MODEL = os.environ.get("GODAR_MODEL", "claude-opus-5-5")
+# "codex" notar innskráningu Codex CLI (ChatGPT-áskrift), "claude" notar ANTHROPIC_API_KEY
+PROVIDER = os.environ.get("GODAR_PROVIDER", "codex")
+MODEL = os.environ.get("GODAR_MODEL", "claude-opus-5-5" if PROVIDER == "claude" else "")
+CODEX_BIN = os.environ.get("GODAR_CODEX_BIN", "codex")
 BATCH_SIZE = 15
 MIN_SCORE = int(os.environ.get("GODAR_MIN_SCORE", "7"))
 
@@ -58,6 +64,49 @@ def _batch_prompt(articles: list[dict]) -> str:
     return "Metið þessar fréttir:\n\n" + json.dumps(payload, ensure_ascii=False, indent=1)
 
 
+# JSON Schema fyrir svar Codex. OpenAI krefst þess að allir reitir séu skyldugir og engir aukareitir leyfðir.
+CODEX_SCHEMA = {
+    "type": "object",
+    "additionalProperties": False,
+    "required": ["verdicts"],
+    "properties": {"verdicts": {"type": "array", "items": {
+        "type": "object",
+        "additionalProperties": False,
+        "required": list(Verdict.model_fields),
+        "properties": {
+            "id": {"type": "string"},
+            "score": {"type": "integer"},
+            "good_news": {"type": "boolean"},
+            "category": {"type": "string", "enum": list(CATEGORIES)},
+            "title_is": {"type": "string"},
+            "summary_is": {"type": "string"},
+            "reason": {"type": "string"},
+        },
+    }}},
+}
+
+
+def _keep_known(verdicts: list[Verdict], articles: list[dict]) -> list[Verdict]:
+    ids = {a["id"] for a in articles}
+    return [v for v in verdicts if v.id in ids]
+
+
+def classify_batch_codex(articles: list[dict], timeout: int = 600) -> list[Verdict]:
+    """Keyrir `codex exec` án verkfæra og les svarið samkvæmt CODEX_SCHEMA."""
+    with tempfile.TemporaryDirectory() as tmp:
+        schema, out = Path(tmp) / "schema.json", Path(tmp) / "out.json"
+        schema.write_text(json.dumps(CODEX_SCHEMA))
+        cmd = [CODEX_BIN, "exec", "--ephemeral", "--skip-git-repo-check", "--sandbox", "read-only",
+               "--cd", tmp, "--output-schema", str(schema), "--output-last-message", str(out), "-"]
+        if MODEL:
+            cmd[2:2] = ["--model", MODEL]
+        prompt = SYSTEM + "\n\nSvaraðu eingöngu með JSON samkvæmt skemanu. Ekki keyra neinar skipanir.\n\n" + _batch_prompt(articles)
+        proc = subprocess.run(cmd, input=prompt, capture_output=True, text=True, timeout=timeout)
+        if proc.returncode != 0 or not out.exists():
+            raise RuntimeError(f"codex exec mistókst ({proc.returncode}): {proc.stderr[-2000:]}")
+        return _keep_known(BatchVerdicts.model_validate_json(out.read_text()).verdicts, articles)
+
+
 def classify_batch(client: anthropic.Anthropic, articles: list[dict]) -> list[Verdict]:
     response = client.messages.parse(
         model=MODEL,
@@ -70,21 +119,24 @@ def classify_batch(client: anthropic.Anthropic, articles: list[dict]) -> list[Ve
     if response.stop_reason == "refusal" or response.parsed_output is None:
         log.warning("Engin niðurstaða fyrir lotu (stop_reason=%s)", response.stop_reason)
         return []
-    ids = {a["id"] for a in articles}
-    return [v for v in response.parsed_output.verdicts if v.id in ids]
+    return _keep_known(response.parsed_output.verdicts, articles)
 
 
-def classify(articles: list[dict], client: anthropic.Anthropic | None = None) -> dict[str, Verdict]:
+def classify(articles: list[dict], client: anthropic.Anthropic | None = None,
+             provider: str = PROVIDER) -> dict[str, Verdict]:
     """Skilar mati fyrir hverja grein sem tókst að meta, eftir id."""
-    client = client or anthropic.Anthropic()
+    if provider == "claude":
+        client = client or anthropic.Anthropic()
     results: dict[str, Verdict] = {}
     for start in range(0, len(articles), BATCH_SIZE):
         batch = articles[start:start + BATCH_SIZE]
         try:
-            for verdict in classify_batch(client, batch):
-                results[verdict.id] = verdict
-        except anthropic.APIError as exc:
+            verdicts = classify_batch(client, batch) if provider == "claude" else classify_batch_codex(batch)
+        except (anthropic.APIError, RuntimeError, subprocess.TimeoutExpired, ValueError) as exc:
             log.error("Villa við mat á lotu %d: %s", start // BATCH_SIZE, exc)
+            continue
+        for verdict in verdicts:
+            results[verdict.id] = verdict
     return results
 
 

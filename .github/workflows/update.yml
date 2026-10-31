@@ -13,6 +13,9 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  GODAR_PROVIDER: ${{ vars.GODAR_PROVIDER || 'codex' }}
+
 concurrency:
   group: update
   cancel-in-progress: false
@@ -31,10 +34,37 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
 
+      # Codex-innskráning: auth.json af eigin vél er geymt sem leyndarmálið CODEX_AUTH_JSON
+      - name: Setja upp Codex
+        if: env.GODAR_PROVIDER == 'codex'
+        env:
+          CODEX_AUTH_JSON: ${{ secrets.CODEX_AUTH_JSON }}
+        run: |
+          npm install -g @openai/codex
+          mkdir -p ~/.codex
+          printf '%s' "$CODEX_AUTH_JSON" > ~/.codex/auth.json
+          chmod 600 ~/.codex/auth.json
+          sha256sum ~/.codex/auth.json > /tmp/auth.sha
+
       - name: Sækja, meta og byggja
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GODAR_MODEL: ${{ vars.GODAR_MODEL }}
         run: python -m godar run
+
+      # Codex endurnýjar aðgangslykilinn og eldri lykill hættir þá að virka.
+      # Vistum nýja auth.json aftur sem leyndarmál svo næsta keyrsla geti skráð sig inn.
+      - name: Vista endurnýjaða Codex-innskráningu
+        if: always() && env.GODAR_PROVIDER == 'codex'
+        env:
+          GH_TOKEN: ${{ secrets.GH_SECRETS_TOKEN }}
+        run: |
+          if sha256sum -c /tmp/auth.sha --quiet 2>/dev/null; then exit 0; fi
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::warning::Codex endurnýjaði innskráninguna en GH_SECRETS_TOKEN vantar, svo CODEX_AUTH_JSON var ekki uppfært."
+            exit 0
+          fi
+          gh secret set CODEX_AUTH_JSON --repo "$GITHUB_REPOSITORY" < ~/.codex/auth.json
 
       - name: Vista gögn
         run: |

@@ -35,7 +35,7 @@ class FakeMessages:
 
 def test_classify_filters_unknown_ids_and_threshold():
     arts = [{"id": i, "source": "s", "lang": "is", "title": "t", "excerpt": "e"} for i in ("a", "b")]
-    result = classify.classify(arts, client=SimpleNamespace(messages=FakeMessages()))
+    result = classify.classify(arts, client=SimpleNamespace(messages=FakeMessages()), provider="claude")
     assert set(result) == {"a", "b"}
     assert classify.is_published(result["a"]) and not classify.is_published(result["b"])
 
@@ -72,3 +72,24 @@ def test_image_from_summary_html_and_og_regex():
     from godar.fetch import OG_RE
     m = OG_RE.search('<meta content="/m.jpg" property="og:image">')
     assert (m.group(1) or m.group(2)) == "/m.jpg"
+
+
+def test_codex_provider_uses_schema_and_output_file(tmp_path, monkeypatch):
+    # Gervi-codex sem staðfestir rökin og skrifar svar í --output-last-message
+    fake = tmp_path / "codex"
+    fake.write_text("""#!/usr/bin/env python3
+import json, sys
+args = sys.argv[1:]
+assert args[0] == "exec" and args[-1] == "-"
+schema = json.load(open(args[args.index("--output-schema") + 1]))
+assert schema["properties"]["verdicts"]["items"]["additionalProperties"] is False
+assert "Metið þessar fréttir" in sys.stdin.read()
+json.dump({"verdicts": [{"id": "a", "score": 8, "good_news": True, "category": "innlent",
+           "title_is": "T", "summary_is": "S", "reason": "R"}]},
+          open(args[args.index("--output-last-message") + 1], "w"))
+""")
+    fake.chmod(0o755)
+    monkeypatch.setattr(classify, "CODEX_BIN", str(fake))
+    arts = [{"id": "a", "source": "s", "lang": "is", "title": "t", "excerpt": "e"}]
+    result = classify.classify(arts, provider="codex")
+    assert result["a"].category == "innlent" and classify.is_published(result["a"])
