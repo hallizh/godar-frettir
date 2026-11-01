@@ -32,6 +32,7 @@ CategoryKey = Literal[tuple(CATEGORIES)]  # type: ignore[valid-type]
 class Verdict(BaseModel):
     id: str
     score: int = Field(description="0 = mjög neikvæð frétt, 10 = einstaklega uppörvandi frétt")
+    importance: int = Field(description="0 = smámál, 10 = stórtíðindi sem skipta marga máli")
     good_news: bool = Field(description="Á þessi frétt heima á síðu með góðum fréttum?")
     category: CategoryKey
     title_is: str = Field(description="Stutt, lýsandi fyrirsögn á íslensku")
@@ -55,7 +56,8 @@ SYSTEM = f"""Þú ert ritstjóri íslensku fréttasíðunnar „Góðar fréttir
    - úrslitum íþróttaleikja nema um sé að ræða sérstakt afrek eða fallega sögu.
 3. Veldu einn flokk: {", ".join(f"{k} ({v})" for k, v in CATEGORIES.items())}.
    Veldu sértækasta efnisflokkinn sem á við (t.d. taekni, laekningar, visindi, umhverfi, dyralif, ithrottir, menning). Notaðu innlent fyrir almennar íslenskar fréttir og erlent fyrir almennar erlendar fréttir.
-4. Skrifaðu fyrirsögn og 2-3 setninga samantekt á vandaðri, eðlilegri íslensku. Haltu þig við staðreyndirnar í útdrættinum og bættu engu við sem þar kemur ekki fram. Ekki nota upphrópanir eða ofhlaðið orðalag.
+4. Gefðu einkunnina importance 0-10 fyrir hversu merkileg og fréttnæm fréttin er, óháð því hversu jákvæð hún er. Hátt: læknisfræðileg bylting, stór vísindauppgötvun, tímamót sem snerta marga, stór áfangi á landsvísu. Lágt: staðbundnir viðburðir, útskriftir, skemmtanir, krúttlegar smásögur. Vertu sparsamur á 8 og hærra.
+5. Skrifaðu fyrirsögn og 2-3 setninga samantekt á vandaðri, eðlilegri íslensku. Haltu þig við staðreyndirnar í útdrættinum og bættu engu við sem þar kemur ekki fram. Ekki nota upphrópanir eða ofhlaðið orðalag.
 
 Skilaðu einni niðurstöðu fyrir hverja frétt, með sama id og fréttin hafði."""
 
@@ -80,6 +82,7 @@ CODEX_SCHEMA = {
         "properties": {
             "id": {"type": "string"},
             "score": {"type": "integer"},
+            "importance": {"type": "integer"},
             "good_news": {"type": "boolean"},
             "category": {"type": "string", "enum": list(CATEGORIES)},
             "title_is": {"type": "string"},

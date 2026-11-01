@@ -34,9 +34,26 @@ def time_ago(ts: int, now: float) -> str:
     return f"{d.day}. {MONTHS[d.month - 1]}"
 
 
-def home_sections(articles: list[dict]) -> list[tuple[str, list[dict]]]:
+def weight(a: dict) -> tuple:
+    # Eldri greinar hafa ekki importance; nota þá jákvæðnieinkunnina
+    return (a.get("importance", a["score"] - 2), a["score"], a["image"] is not None, a["published"])
+
+
+def pick_top(articles: list[dict], now: float) -> tuple[dict, list[dict], list[dict]]:
+    """Aðalfrétt og hliðardálkur eru merkilegustu fréttir síðasta sólarhrings; „Nýjast“ er í tímaröð."""
+    for hours in (24, 48, 24 * 7, None):
+        recent = [a for a in articles if hours is None or a["published"] >= now - hours * 3600]
+        if len(recent) >= 5:
+            break
+    ranked = sorted(recent, key=weight, reverse=True)
+    lead, side = ranked[0], ranked[1:5]
+    picked = {a["id"] for a in ranked[:5]}
+    latest = [a for a in articles if a["id"] not in picked][:TOP_COUNT - 5]
+    return lead, side, latest
+
+
+def home_sections(articles: list[dict], shown: set[str]) -> list[tuple[str, list[dict]]]:
     """Fréttir hvers flokks fyrir neðan toppinn á forsíðunni, án endurtekninga."""
-    shown = {a["id"] for a in articles[:TOP_COUNT]}
     sections = []
     for key in CATEGORIES:
         items = [a for a in articles if a["category"] == key and a["id"] not in shown][:SECTION_COUNT]
@@ -64,8 +81,10 @@ def build(articles: list[dict], out: Path, demo: bool = False, now: float | None
     if demo:
         shutil.copytree(ROOT / "demo" / "img", out / "demo-img")
 
+    top = pick_top(articles, now) if articles else None
+    shown = {a["id"] for group in ([top[0]], top[1], top[2]) for a in group} if top else set()
     (out / "index.html").write_text(env.get_template("home.html").render(
-        **common, active=None, base="", articles=articles, sections=home_sections(articles)))
+        **common, active=None, base="", top=top, sections=home_sections(articles, shown)))
     page = env.get_template("category.html")
     for key, label in CATEGORIES.items():
         items = [a for a in articles if a["category"] == key][:PER_PAGE]

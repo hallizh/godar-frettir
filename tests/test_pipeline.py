@@ -23,11 +23,11 @@ def test_parse_feed_cleans_and_skips():
 class FakeMessages:
     def parse(self, **kwargs):
         verdicts = classify.BatchVerdicts(verdicts=[
-            classify.Verdict(id="a", score=9, good_news=True, category="laekningar",
+            classify.Verdict(id="a", score=9, importance=8, good_news=True, category="laekningar",
                              title_is="Gott", summary_is="Mjög gott.", reason="r"),
-            classify.Verdict(id="b", score=2, good_news=False, category="erlent",
+            classify.Verdict(id="b", score=2, importance=3, good_news=False, category="erlent",
                              title_is="Slæmt", summary_is="Slæmt.", reason="r"),
-            classify.Verdict(id="ókunnugt", score=9, good_news=True, category="erlent",
+            classify.Verdict(id="ókunnugt", score=9, importance=5, good_news=True, category="erlent",
                              title_is="x", summary_is="x", reason="r"),
         ])
         return SimpleNamespace(stop_reason="end_turn", parsed_output=verdicts)
@@ -84,7 +84,7 @@ assert args[0] == "exec" and args[-1] == "-"
 schema = json.load(open(args[args.index("--output-schema") + 1]))
 assert schema["properties"]["verdicts"]["items"]["additionalProperties"] is False
 assert "Metið þessar fréttir" in sys.stdin.read()
-json.dump({"verdicts": [{"id": "a", "score": 8, "good_news": True, "category": "innlent",
+json.dump({"verdicts": [{"id": "a", "score": 8, "importance": 6, "good_news": True, "category": "innlent",
            "title_is": "T", "summary_is": "S", "reason": "R"}]},
           open(args[args.index("--output-last-message") + 1], "w"))
 """)
@@ -105,3 +105,14 @@ def test_stops_after_first_batch_fails(monkeypatch):
     arts = [{"id": str(i), "source": "s", "lang": "is", "title": "t", "excerpt": "e"} for i in range(40)]
     assert classify.classify(arts, provider="codex") == {}
     assert len(calls) == 1
+
+
+def test_lead_is_most_important_recent_story():
+    from godar.build import pick_top
+    now = 1_000_000
+    arts = [{"id": str(i), "score": 8, "importance": imp, "image": "x", "published": now - age * 3600}
+            for i, (imp, age) in enumerate([(3, 1), (4, 2), (9, 30), (8, 5), (5, 3), (2, 4), (6, 6)])]
+    lead, side, latest = pick_top(arts, now)
+    assert lead["id"] == "3"  # importance 8, innan sólarhrings; 9 er of gömul
+    assert [a["id"] for a in side] == ["6", "4", "1", "0"]
+    assert "3" not in {a["id"] for a in latest}
