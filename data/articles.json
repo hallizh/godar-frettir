@@ -104,6 +104,21 @@
   "title": "A simple blood test could reveal Alzheimer’s risk 10 years before symptoms",
   "title_is": "Blóðpróf gæti hjálpað til við að spá fyrir um áhættu á Alzheimer"
  },
+ "110e56d058717fbf": {
+  "category": "umhverfi",
+  "excerpt": "Landshelgisgæslan hefur birt nýjar myndir af Kolbeinsey, norður af landinu, og virðist sem að hægt hafi á niðurbroti eyjarinnar á síðustu árum. Eyjan er enn til staðar þrátt fyrir fyrri spádóma um að hún yrði með öllu horfin árið 2020.",
+  "id": "110e56d058717fbf",
+  "image": "https://www.visir.is/i/37934F78B364060466E88D9A52EE08E8A795A404718C49AB0CA6A1674237FA80_1600x900.jpg",
+  "importance": 4,
+  "lang": "is",
+  "link": "https://www.visir.is/g/20262957604d/kolbeinsey-lifir-enn-thratt-fyrir-spadoma-um-annad",
+  "published": 1793701952,
+  "score": 7,
+  "source": "Vísir",
+  "summary_is": "Nýjar myndir Landhelgisgæslunnar benda til þess að hægt hafi á niðurbroti Kolbeinseyjar síðustu ár. Eyjan er enn til staðar þrátt fyrir fyrri spár um að hún hyrfi árið 2020.",
+  "title": "Kol­beins­ey lifir enn þrátt fyrir spá­dóma um annað",
+  "title_is": "Kolbeinsey stendur enn og hægja virðist á niðurbroti"
+ },
  "164c9783157a8465": {
   "category": "innlent",
   "excerpt": "Hrekkjavökuhátíðin fór fram með besta móti í Lindahverfi í Kópavogi í ár og tóku húsráðendur í yfir hundrað húsum sig saman um að bjóða upp á gotterí fyrir börn og einstaka unglinga sem ferðuðust um hverfið klædd skemmtilegum, stórglæsilegum og skelfilegum búningum.",
@@ -809,6 +824,21 @@
   "title": "IceCube detects ghost particles with 10 billion times the energy of solar neutrinos",
   "title_is": "IceCube nemur afar orkumiklar nifteindir"
  },
+ "62b9195215229a8c": {
+  "category": "innlent",
+  "excerpt": "Gunnar Smári Egilsson greinir frá því í færslu á Facebook í dag að 31 ár sé liðið frá því að hann hætti að drekka áfengi.",
+  "id": "62b9195215229a8c",
+  "image": "https://www.dv.is/sites/default/files/2025/03/Gunnar-Smari-studio.jpg",
+  "importance": 3,
+  "lang": "is",
+  "link": "https://www.dv.is/fokus/2026/11/03/gunnar-smari-fagnar-storum-afanga-i-dag",
+  "published": 1793706806,
+  "score": 8,
+  "source": "DV",
+  "summary_is": "Gunnar Smári Egilsson segir í færslu á Facebook að 31 ár sé liðið frá því hann hætti að drekka áfengi. Hann minntist áfangans í dag.",
+  "title": "Gunnar Smári fagnar stórum áfanga í dag",
+  "title_is": "Gunnar Smári hefur verið edrú í 31 ár"
+ },
  "6338e001bb01e62d": {
   "category": "laekningar",
   "excerpt": "Mayo Clinic scientists have uncovered surprising new insights into “zombie cells,” aging cells that linger in the body and contribute to inflammation and disease. Seven studies reveal why these cells are harmful and identify new strategies for targeting them, including a natural compound found in tomatoes. In aging mice, experimental treatments reduced inflammation and improved physical and brain health. The findings could open the door to therapies that combat some of the biological processes behind aging.",
@@ -1019,6 +1049,21 @@
   "title": "James Webb discovers a scorching lava planet with a “giant sunscreen”",
   "title_is": "Athuganir benda til þétts lofthjúps á fjarlægri hraunreikistjörnu"
  },
+ "7808ecbf296de192": {
+  "category": "laekningar",
+  "excerpt": "Á Íslandi líkt og víða annars staðar í heiminum, lifa íbúar lengur en nokkru sinni fyrr. Þessi þróun er talinn einn mesti árangur á sviði lýðheilsu og félagslegra umbóta síðustu áratuga. Samhliða þessum framförum vaknar umræða um mikilvæga spurningu: Hvernig tryggjum við að fleiri ár þýði einnig betri ár?",
+  "id": "7808ecbf296de192",
+  "image": "https://www.visir.is/i/9DFFA143733E05BFB31859A2C519FED158C428E12849D0AE519BB3B34DD7DDB5_1600x900.jpg",
+  "importance": 6,
+  "lang": "is",
+  "link": "https://www.visir.is/g/20262957403d/ad-eldast-er-ad-lifa",
+  "published": 1793691955,
+  "score": 7,
+  "source": "Vísir",
+  "summary_is": "Íbúar Íslands og margra annarra landa lifa lengur en áður. Í greininni er þessi þróun rakin til árangurs í lýðheilsu og félagslegum umbótum og spurt hvernig tryggja megi að auknum lífárum fylgi betri lífsgæði.",
+  "title": "Að eldast er að lifa",
+  "title_is": "Lengri lífaldur sagður árangur í lýðheilsu"
+ },
  "784f7f931746cf62": {
   "category": "laekningar",
   "excerpt": "The scientists involved say the results could mark a turning point in cancer treatment, bringing personalised medicine a step closer.",
@@ -1078,6 +1123,21 @@
   "summary_is": "Í Namibíu nýta landverðir rauntímagögn og hefðbundna þekkingu til að styðja bændur og vernda ljón. Ljónastofninn á svæðinu er að ná sér á strik.",
   "title": "Smartphones, ancient tracking skills and a future for desert lions",
   "title_is": "Stafræn gögn og staðbundin þekking hjálpa til við vernd ljóna"
+ },
+ "804a43f779a08073": {
+  "category": "visindi",
+  "excerpt": "Researchers have detected signals from the smallest distances ever probed.",
+  "id": "804a43f779a08073",
+  "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/eca0/live/1ab4cfb0-d2ef-11f1-b441-2b33b063138f.jpg",
+  "importance": 7,
+  "lang": "en",
+  "link": "https://www.bbc.co.uk/news/articles/c5pvgxkkv4dzo?at_medium=RSS&at_campaign=rss",
+  "published": 1793685683,
+  "score": 7,
+  "source": "BBC",
+  "summary_is": "Vísindamenn hafa greint merki frá minni fjarlægðum en áður hafa verið kannaðar. Niðurstaðan markar framfarir í rannsóknum á smæstu kvörðum.",
+  "title": "Scientists detect signals at the smallest scale ever explored",
+  "title_is": "Greina merki á smærri kvarða en áður"
  },
  "806ef299480565d2": {
   "category": "ithrottir",
@@ -1319,6 +1379,21 @@
   "title": "The women’s boxing nights helping abuse survivors",
   "title_is": "Hnefaleikakvöld eiga að styðja konur eftir ofbeldissambönd"
  },
+ "9099393b662976fe": {
+  "category": "laekningar",
+  "excerpt": "A surprising discovery suggests that rejuvenating the liver could help protect against Alzheimer’s disease and heart disease. USC researchers found that an experimental drug restored aging liver cells in rats, cutting levels of an Alzheimer’s-linked protein in half and bringing bad cholesterol down to youthful levels. The treatment also revived a previously unknown communication system that helps liver cells remove harmful substances from the bloodstream.",
+  "id": "9099393b662976fe",
+  "image": "https://www.sciencedaily.com/images/1920/3d-human-liver-anatomy.webp",
+  "importance": 7,
+  "lang": "en",
+  "link": "https://www.sciencedaily.com/releases/2026/10/261031221155.htm",
+  "published": 1793666099,
+  "score": 8,
+  "source": "ScienceDaily",
+  "summary_is": "Vísindamenn við USC komust að því að tilraunalyf endurheimti virkni aldraðra lifrarfrumna í rottum og lækkaði magn próteins sem tengist Alzheimer-sjúkdómi um helming. Magn slæms kólesteróls lækkaði einnig og áður óþekkt samskiptakerfi sem hjálpar lifrarfrumum að fjarlægja skaðleg efni úr blóði varð aftur virkt.",
+  "title": "Scientists reverse liver cell aging and cut Alzheimer’s-linked protein in half",
+  "title_is": "Tilraunalyf endurheimti virkni aldraðra lifrarfrumna í rottum"
+ },
  "90fca299e8f2afe1": {
   "category": "erlent",
   "excerpt": "There was renewed hope for the Amazon rainforest, a skin cancer vaccine showed promise, and a nicotine loophole was closed in the UK, plus more The post What went right this week: the good news that matters appeared first on Positive News .",
@@ -1393,6 +1468,21 @@
   "summary_is": "Nemandi kynntist jarðarberjabónda eftir að hafa séð símanúmer hans í spurningu á enskuprófi. Bóndinn varð honum innblástur og nemandinn fékk síðar inngöngu í virtan háskóla, þar sem hann stundar nú framhaldsnám í gervigreind.",
   "title": "A Farmer Didn’t Know His Cell Number Was on an Exam Question, Now Uses the Calls He Gets as Opportunities to Inspire",
   "title_is": "Jarðarberjabóndi varð nemanda innblástur eftir óvænt símtal"
+ },
+ "971d0ce0f8f5de02": {
+  "category": "visindi",
+  "excerpt": "Scientists at CERN's Large Hadron Collider have uncovered compelling new evidence that even relatively small atomic collisions can recreate the extraordinary state of matter that filled the universe moments after the Big Bang. Known as quark-gluon plasma, this exotic substance forms at temperatures more than 100,000 times hotter than the center of the Sun, causing ordinary particles to break apart into their fundamental building blocks.",
+  "id": "971d0ce0f8f5de02",
+  "image": "https://www.sciencedaily.com/images/1920/quark-gluon-plasma-formation.webp",
+  "importance": 8,
+  "lang": "en",
+  "link": "https://www.sciencedaily.com/releases/2026/10/261031221211.htm",
+  "published": 1793673544,
+  "score": 8,
+  "source": "ScienceDaily",
+  "summary_is": "Vísindamenn við CERN hafa fundið nýjar vísbendingar um að tiltölulega litlir árekstrar geti myndað kvarka-glúonkviku. Það er afar heitt ástand efnis sem fyllti alheiminn skömmu eftir Miklahvell.",
+  "title": "Large Hadron Collider reveals evidence of Big Bang matter in surprisingly small collisions",
+  "title_is": "Ný vísbending um efni frá fyrstu augnablikum alheimsins"
  },
  "978ec281ee4f547c": {
   "category": "erlent",
@@ -1799,6 +1889,21 @@
   "title": "Largest woodland bat survey a 'nice story of AI for good'",
   "title_is": "Sjaldgæfar leðurblökur skráðar í suðvesturhluta Englands"
  },
+ "c2d562a91019309e": {
+  "category": "laekningar",
+  "excerpt": "Scientists have discovered that a drug originally developed for spinal cord injuries can tackle several key features of Alzheimer’s disease, including DNA damage and inflammation. Already tested for initial safety in humans, the experimental treatment could offer a faster path toward therapies that target the disease at its roots.",
+  "id": "c2d562a91019309e",
+  "image": "https://www.sciencedaily.com/images/1920/genetic-neuroscience-human-brain-dna-mutation-health.webp",
+  "importance": 7,
+  "lang": "en",
+  "link": "https://www.sciencedaily.com/releases/2026/11/261102075806.htm",
+  "published": 1793679118,
+  "score": 8,
+  "source": "ScienceDaily",
+  "summary_is": "Vísindamenn hafa komist að því að lyf sem upphaflega var þróað vegna mænuskaða getur unnið gegn nokkrum einkennum Alzheimer-sjúkdóms, þar á meðal DNA-skemmdum og bólgum. Upphaflegt öryggi lyfsins hefur þegar verið prófað í fólki, en meðferðin er enn á tilraunastigi.",
+  "title": "Scientists discover new Alzheimer’s drug that repairs DNA damage and reduces brain inflammation",
+  "title_is": "Tilraunalyf gæti nýst gegn Alzheimer-sjúkdómi"
+ },
  "c52fe5095605e0cd": {
   "category": "umhverfi",
   "excerpt": "It’s not uncommon to walk past litter in a major city: what’s uncommon is stopping to do something about it. Yet it wasn’t just litter that Queens resident Joshua Service walked past on a recent rail commute, but a spontaneous dumping site. Mr. Service whipped out his phone and recorded a video of the piles […] The post Man Named ‘Service’ Cleans Up NYC Dumping Site on His Own Initiative appeared first on Good News Network .",
@@ -1948,6 +2053,21 @@
   "summary_is": "Kimi Antonelli varð heimsmeistari í Formúlu 1 í fyrsta sinn, tvítugur að aldri. Hann er yngsti heimsmeistarinn í sögu íþróttarinnar og sá fyrsti frá Ítalíu síðan 1953.",
   "title": "Ítalinn ungi há­grét eftir sögu­legan heims­meistara­titil",
   "title_is": "Kimi Antonelli yngsti heimsmeistari í sögu Formúlu 1"
+ },
+ "d23ffb827e18d014": {
+  "category": "innlent",
+  "excerpt": "Óskað var eftir aðstoð björgunarskipsins Þórs í Vestmannaeyjum í gærkvöld þegar koma þurfti sjúklingi upp á land. Þoka í Eyjum kom í veg fyrir að þyrla Landhelgisgæslunnar gæti lent og því var ákveðið að fara sjóleiðina. Vakthafandi læknir hafði samband við Björgunarfélag Vestmannaeyja í gærkvöld og bað um aðstoð við að koma sjúklingi hluta leiðarinnar til Reykjavíkur. Áhöfn björgunarskipsins Þórs var kölluð út á hæsta forgangi og hálftíma eftir að beiðni um aðstoð barst var sjúklingurinn kominn í Landeyjahöfn. Þaðan var hann fluttur með sjúkrabíl til Reykjavíkur. Greint er frá þessu á Facebook-síðu björgunarfélagsins. Þar er áhöfninni þakkað fyrir skjót viðbrögð og sjúklingnum óskað skjóts ",
+  "id": "d23ffb827e18d014",
+  "image": "https://myndir.ruv.is/eyJidWNrZXQiOiAicnV2LXByb2QtcnV2aXMtcHVibGljIiwgImtleSI6ICJtZWRpYS9wdWJsaWMvb3JpZ2luYWxfaW1hZ2VzL0Jqb3JndW5fU3Vkb1VFNS5qcGciLCAiZWRpdHMiOiB7InRvRm9ybWF0IjogIndlYnAiLCAid2VicCI6IHsicXVhbGl0eSI6IDYwfSwgInJlc2l6ZSI6IHsid2lkdGgiOiAiMTYwMCIsICJmaXQiOiAiY292ZXIiLCAiaGVpZ2h0IjogIjkwMCJ9fX0=",
+  "importance": 4,
+  "lang": "is",
+  "link": "https://www.ruv.is/frettir/innlent/2026-11-03-sigldu-med-sjukling-thegar-thokan-stodvadi-thyrluna-491571/",
+  "published": 1793701966,
+  "score": 8,
+  "source": "RÚV",
+  "summary_is": "Áhöfn björgunarskipsins Þórs í Vestmannaeyjum flutti sjúkling til Landeyjahafnar eftir að þoka kom í veg fyrir að þyrla gæti lent. Sjúklingurinn var kominn í höfn hálftíma eftir að beiðni um aðstoð barst og var þaðan fluttur með sjúkrabíl til Reykjavíkur.",
+  "title": "Sigldu með sjúkling þegar þokan stöðvaði þyrluna",
+  "title_is": "Björgunarskip flutti sjúkling þegar þoka hindraði þyrlu"
  },
  "d2fa2d909307055b": {
   "category": "visindi",
