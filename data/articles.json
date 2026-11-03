@@ -1,4 +1,19 @@
 {
+ "03809a7f8933f0af": {
+  "category": "visindi",
+  "excerpt": "A massive new study reveals that intelligence plays a surprisingly limited role in children's reading success, while visual processing showed no meaningful connection at all. Instead, the strongest predictors are sound recognition, vocabulary, and background knowledge, offering new clues about how to help struggling readers.",
+  "id": "03809a7f8933f0af",
+  "image": "https://www.sciencedaily.com/images/1920/happy-girl-reading-book.webp",
+  "importance": 6,
+  "lang": "en",
+  "link": "https://www.sciencedaily.com/releases/2026/11/261102202845.htm",
+  "published": 1793708118,
+  "score": 7,
+  "source": "ScienceDaily",
+  "summary_is": "Stór rannsókn bendir til þess að hljóðgreining, orðaforði og bakgrunnsþekking tengist lestrarfærni barna sterkar en greind. Samkvæmt rannsókninni fundust engin marktæk tengsl við sjónræna úrvinnslu og niðurstöðurnar gætu nýst til að hjálpa börnum sem eiga í lestrarerfiðleikum.",
+  "title": "Scientists identify two overlooked skills that predict reading success",
+  "title_is": "Rannsókn varpar ljósi á þætti sem tengjast lestrarfærni barna"
+ },
  "05f3b32801c285a7": {
   "category": "visindi",
   "excerpt": "Astronomers have solved a 170-year-old planetary mystery in a nearby two-star system, discovering that a mysterious wobble was caused by stellar activity rather than a giant planet. Although Jupiter-sized worlds have been ruled out in key regions, smaller, potentially habitable planets could still be waiting to be discovered just 16 light-years from Earth.",
@@ -103,6 +118,21 @@
   "summary_is": "Stór alþjóðleg rannsókn bendir til að einfalt blóðpróf geti hjálpað til við að spá fyrir um vitræna hnignun tengda Alzheimer áður en einkenni koma fram. Vísindamenn telja að niðurstöðurnar geti rutt brautina fyrir snemmtækari íhlutun og framtíðarmeðferðir.",
   "title": "A simple blood test could reveal Alzheimer’s risk 10 years before symptoms",
   "title_is": "Blóðpróf gæti hjálpað til við að spá fyrir um áhættu á Alzheimer"
+ },
+ "10786214ce48614a": {
+  "category": "erlent",
+  "excerpt": "In the Indian state of Punjab, Muslims are watching Sikhs and Hindus organize the rebuilding of old mosques destroyed following Partition. Emotional to say the least, the inter-faith community building is being led by many old enough to remember the strife which ripped across the state. A portion of this ancient and proud land was […] The post Rebuilding Mosques Brings Sikhs, Hindus and Muslims Together After Punjab Violence appeared first on Good News Network .",
+  "id": "10786214ce48614a",
+  "image": "https://www.goodnewsnetwork.org/wp-content/uploads/2026/11/A-famous-mosque-and-gurudwara-stand-side-by-side-in-Lahore-Pakistani-Punjab-credit-the-Walled-City-of-Lahore-Authority-CC-BY-SA-4.0-via-Wikimedia-Commons.jpg",
+  "importance": 5,
+  "lang": "en",
+  "link": "https://www.goodnewsnetwork.org/rebuilding-mosques-brings-sikhs-hindus-and-muslims-together-after-punjab-violence/",
+  "published": 1793707224,
+  "score": 8,
+  "source": "Good News Network",
+  "summary_is": "Síkar og hindúar skipuleggja endurbyggingu gamalla moska sem eyðilögðust í kjölfar skiptingar Indlands. Samstarfið í Punjab er meðal annars leitt af fólki sem man eftir átökunum sem fylgdu skiptingunni.",
+  "title": "Rebuilding Mosques Brings Sikhs, Hindus and Muslims Together After Punjab Violence",
+  "title_is": "Trúarhópar sameinast um endurbyggingu moska í Punjab"
  },
  "110e56d058717fbf": {
   "category": "umhverfi",
@@ -283,6 +313,21 @@
   "summary_is": "Nýtt vottunarkerfi fyrir sólarorkuver hvetur framkvæmdaraðila til að skapa betri búsvæði fyrir dýralíf. Markmiðið er að styðja við náttúruna samhliða framleiðslu hreinnar raforku.",
   "title": "The new certification scheme helping solar farms become havens for wildlife",
   "title_is": "Ný vottun hvetur til betri búsvæða á sólarorkusvæðum"
+ },
+ "2661bb752d264df8": {
+  "category": "dyralif",
+  "excerpt": "A nearly 50-year-old mystery involving disappearing frogs in Brazil may finally be solved, with scientists uncovering evidence that a deadly fungus swept through the region and devastated vulnerable species. Remarkably, many frog populations have since rebounded, suggesting they developed greater tolerance to the disease that once threatened their survival.",
+  "id": "2661bb752d264df8",
+  "image": "https://www.sciencedaily.com/images/1920/clay-robber-frog.webp",
+  "importance": 6,
+  "lang": "en",
+  "link": "https://www.sciencedaily.com/releases/2026/11/261102202838.htm",
+  "published": 1793710313,
+  "score": 7,
+  "source": "ScienceDaily",
+  "summary_is": "Vísindamenn hafa fundið vísbendingar um að banvænn sveppur hafi valdið mikilli fækkun froska á svæði í Brasilíu. Margir stofnar hafa síðan náð sér á strik, sem bendir til þess að þeir hafi þróað með sér meira þol gegn sjúkdómnum.",
+  "title": "A 50-year-old mystery of vanishing frogs reveals a hidden killer",
+  "title_is": "Froskastofnar hafa tekið við sér eftir útbreiðslu svepps"
  },
  "276216184c6fb454": {
   "category": "umhverfi",
@@ -478,6 +523,21 @@
   "summary_is": "Vísindamenn við McGill-háskóla hafa uppgötvað að T-frumur geta skynjað hversu stífir vefirnir umhverfis þær eru. Frumurnar nýta þessi boð meðal annars til að ákvarða hvort þær þróast í langlífar minnisfrumur sem veita vörn gegn sýkingum síðar.",
   "title": "Scientists discover the immune system’s hidden sense of touch",
   "title_is": "Ónæmisfrumur skynja stífleika vefja"
+ },
+ "3a441115c6c970b8": {
+  "category": "visindi",
+  "excerpt": "A surprising new discovery suggests that fear may cause the brain to blur the line between danger and safety rather than distinguish them more clearly. By observing brain activity in mice using augmented reality, scientists found that memories of threatening and harmless environments began to overlap, potentially allowing faster responses to danger. This \"better safe than sorry\" survival mechanism could help explain why people with anxiety or PTSD sometimes experience intense fear in completely safe situations.",
+  "id": "3a441115c6c970b8",
+  "image": "https://www.sciencedaily.com/images/1920/intense-fear-evil-paranormal-face-close-up.webp",
+  "importance": 6,
+  "lang": "en",
+  "link": "https://www.sciencedaily.com/releases/2026/11/261102202833.htm",
+  "published": 1793710982,
+  "score": 7,
+  "source": "ScienceDaily",
+  "summary_is": "Vísindamenn fylgdust með heilastarfsemi músa með hjálp viðbótarveruleika og sáu að minningar um hættulegt og meinlaust umhverfi fóru að skarast. Niðurstöðurnar gætu hjálpað til við að skýra hvers vegna fólk með kvíða eða áfallastreituröskun finnur stundum fyrir miklum ótta við öruggar aðstæður.",
+  "title": "The brain’s hidden fear mechanism may explain anxiety and PTSD",
+  "title_is": "Rannsókn á músum varpar ljósi á viðbrögð heilans við ótta"
  },
  "3ad0708cc5037958": {
   "category": "innlent",
@@ -688,6 +748,21 @@
   "summary_is": "Ný rannsókn bendir til þess að regluleg hreyfing styrki hjartað og breyti jafnframt taugunum sem stjórna starfsemi þess. Breytingarnar eru ólíkar vinstra og hægra megin í líkamanum.",
   "title": "Exercise doesn't just strengthen your heart. It rewires it",
   "title_is": "Hreyfing breytir taugum sem stjórna starfsemi hjartans"
+ },
+ "4c03e4ee3e0bd6ac": {
+  "category": "innlent",
+  "excerpt": "Rúmlega 12.000 nemendur í um 130 grunnskólum víðs vegar um landið taka þátt í Stóru stærðfræðikeppninni sem hófst í gær. Næstu fimm vikur keppast nemendur um að leysa stærðfræðiverkefni, safna verðlaunum og sigra keppnina. Markmið keppninnar er bæði kveikja áhuga nemenda og byggja sterkan grunn í á stærðfræði.",
+  "id": "4c03e4ee3e0bd6ac",
+  "image": "https://www.visir.is/i/77B3C35EE201EAAE6621DFE094064EF87EE7BCBAD34286C62CCD04419531F36E_1600x900.jpg",
+  "importance": 5,
+  "lang": "is",
+  "link": "https://www.visir.is/g/20262957283d/stora-staerdfraedikeppnin-hafin-i-grunnskolum-landsins",
+  "published": 1793711757,
+  "score": 7,
+  "source": "Vísir",
+  "summary_is": "Rúmlega 12.000 nemendur í um 130 grunnskólum taka þátt í Stóru stærðfræðikeppninni. Næstu fimm vikur leysa þeir stærðfræðiverkefni og er keppninni meðal annars ætlað að vekja áhuga þeirra á stærðfræði.",
+  "title": "Stóra stærðfræðikeppnin hafin í grunn­skólum landsins",
+  "title_is": "Yfir 12 þúsund nemendur taka þátt í stærðfræðikeppni"
  },
  "4c749f7db7a65f6a": {
   "category": "innlent",
@@ -989,6 +1064,21 @@
   "title": "53 Orangutans Rescued from Fires in Borneo, With Many Rewilded to Forest Preserves Across the Island",
   "title_is": "Fimmtíu og þremur órangútönum bjargað úr skógareldum"
  },
+ "6f07fc961ee95f61": {
+  "category": "visindi",
+  "excerpt": "NASA’s Voyager 1 is approaching an extraordinary milestone nearly 50 years after its launch, even as engineers battle dwindling power and mysterious technical problems. A clever energy-saving maneuver has extended the spacecraft’s scientific mission, while an unexplained 48-hour communications blackout recently gave NASA a scare. On November 18, Voyager 1 will reach a distance of one light-day from Earth, making even the simplest round-trip communication take 48 hours.",
+  "id": "6f07fc961ee95f61",
+  "image": "https://www.sciencedaily.com/images/1920/nasa-voyager-spacecraft-space.webp",
+  "importance": 7,
+  "lang": "en",
+  "link": "https://www.sciencedaily.com/releases/2026/11/261103003152.htm",
+  "published": 1793693470,
+  "score": 8,
+  "source": "ScienceDaily",
+  "summary_is": "Geimfarið Voyager 1 mun 18. nóvember ná þeirri fjarlægð frá jörðu sem ljós fer á einum degi. Orkusparandi aðgerð hefur lengt vísindalegt verkefni farsins þrátt fyrir minnkandi orku og tæknivanda.",
+  "title": "NASA’s Voyager 1 is about to reach a historic one-light-day milestone",
+  "title_is": "Voyager 1 nálgast eins ljósdags fjarlægð frá jörðu"
+ },
  "6fd2582ecaa79468": {
   "category": "laekningar",
   "excerpt": "The initiative, in England, will help busy staff identify children who are deteriorating quickly as they wait for emergency care.",
@@ -1154,6 +1244,21 @@
   "title": "Sneri eigin sorg í góðverk fyrir aðra",
   "title_is": "Leiðir saman íþróttafólk og börn sem takast á við erfiðleika"
  },
+ "80a8d95727984f6e": {
+  "category": "visindi",
+  "excerpt": "Europe’s Hera spacecraft has captured its first clear view of two asteroids involved in NASA’s historic 2022 experiment to redirect a potentially dangerous space rock. Now approaching the pair, Hera will investigate the mysterious aftermath of the collision and uncover why the asteroid shifted far more than scientists predicted.",
+  "id": "80a8d95727984f6e",
+  "image": "https://www.sciencedaily.com/images/1920/hera-approaches-dimorphos.webp",
+  "importance": 6,
+  "lang": "en",
+  "link": "https://www.sciencedaily.com/releases/2026/11/261103003154.htm",
+  "published": 1793699181,
+  "score": 7,
+  "source": "ScienceDaily",
+  "summary_is": "Evrópska geimfarið Hera hefur náð fyrstu skýru myndinni af tveimur smástirnum sem tengdust tilraun NASA árið 2022. Hera mun rannsaka afleiðingar árekstursins og hvers vegna smástirnið færðist meira úr stað en vísindamenn höfðu spáð.",
+  "title": "NASA smashed into an asteroid. Now Hera is closing in to see what happened",
+  "title_is": "Hera nálgast smástirnin eftir árekstrartilraun NASA"
+ },
  "8126818f3ffaed3e": {
   "category": "erlent",
   "excerpt": "The Atlanta-based nonprofit that launched an Eviction Relief Fund during the COVID pandemic has now assisted over 5,500 families so they could stay in their apartments. Marjy Stagmeier, a landlord of affordable housing in the Georgia capital city, is helping ease the burden on tenants through fundraising for the nonprofit she founded, the Star-C Program. […] The post Housing Nonprofit Funds $16.5 Million in Eviction Relief to Assist Renters appeared first on Good News Network .",
@@ -1273,6 +1378,21 @@
   "summary_is": "Vísindamenn hafa komist að því að þrír djúpsjávarfiskar sem líkjast sæhestum tilheyra sérstakri þróunargrein. Aðeins sjö eintök eru þekkt og enginn hefur séð fiskana lifandi.",
   "title": "Scientists discover mysterious seahorse lookalikes that no one has ever seen alive",
   "title_is": "Djúpsjávarfiskar reyndust tilheyra sérstakri þróunargrein"
+ },
+ "8883324244ecded6": {
+  "category": "ithrottir",
+  "excerpt": "This rolling inspiration is Xie Junwu, an iron-willed wheelchair-bound althlete who’s climbed mountains, completed marathons, and now spends his days skateboarding. Xie has been breaking records and barriers for years with his wheelchair capabilities, and now in middle age, he is helping others build confidence in their maneuvering with what is almost certainly China’s first […] The post This Wheelchair Skateboarding Teacher Already Conquered Mountains and Marathons appeared first on Good News Network .",
+  "id": "8883324244ecded6",
+  "image": "https://www.goodnewsnetwork.org/wp-content/uploads/2026/11/YouTube-screengrab-credit-Xie-Junwu-.jpg",
+  "importance": 4,
+  "lang": "en",
+  "link": "https://www.goodnewsnetwork.org/he-conquered-mountains-and-marathons-now-he-teaches-wheelchair-skateboarding-watch/",
+  "published": 1793714436,
+  "score": 8,
+  "source": "Good News Network",
+  "summary_is": "Xie Junwu hefur farið á fjöll og lokið maraþonhlaupum á hjólastól. Hann stundar nú hjólastólabrettaiðkun og hjálpar öðrum að öðlast sjálfstraust í að stjórna stólum sínum.",
+  "title": "This Wheelchair Skateboarding Teacher Already Conquered Mountains and Marathons",
+  "title_is": "Hjólastólabrettakennari hjálpar öðrum að öðlast sjálfstraust"
  },
  "8a16bac4936ee459": {
   "category": "erlent",
@@ -2189,6 +2309,21 @@
   "title": "Safna í minningu Johns Snorra fyrir munaðar­laus börn",
   "title_is": "Söfnun í minningu Johns Snorra styður fjölskyldur í Nepal"
  },
+ "e66d3b28d0adae27": {
+  "category": "visindi",
+  "excerpt": "Scientists have discovered all five essential nucleobases used in DNA and RNA in pristine samples from asteroid Ryugu, revealing that key ingredients for life existed in space billions of years ago. The remarkable finding adds to growing evidence from other asteroids and meteorites that these molecules were widespread throughout the early Solar System.",
+  "id": "e66d3b28d0adae27",
+  "image": "https://www.sciencedaily.com/images/1920/ryugu-sample-in-return-capsule.webp",
+  "importance": 7,
+  "lang": "en",
+  "link": "https://www.sciencedaily.com/releases/2026/11/261102075903.htm",
+  "published": 1793703504,
+  "score": 8,
+  "source": "ScienceDaily",
+  "summary_is": "Vísindamenn fundu alla fimm kjarnabasana sem eru í DNA og RNA í sýnum úr smástirninu Ryugu. Niðurstaðan bætist við vísbendingar um að þessar sameindir hafi verið útbreiddar í sólkerfinu á fyrstu skeiðum þess.",
+  "title": "All 5 genetic “letters” of DNA and RNA discovered in a 4.5-billion-year-old asteroid",
+  "title_is": "Allir fimm kjarnabasar DNA og RNA fundust í Ryugu"
+ },
  "e74c395aaaaf36d1": {
   "category": "visindi",
   "excerpt": "Scientists have built a groundbreaking molecular motor that spins in either direction using electricity, inspired by a machine invented more than 2,000 years ago. Even more remarkably, its rotation can boost electrical conductivity by up to 100 times, potentially transforming the future of molecular electronics.",
@@ -2234,6 +2369,21 @@
   "title": "High School Baseball Team Has All the Vibes of Success But Never Won a Game: Kids Don’t Mind",
   "title_is": "Skólalið nýtur hafnaboltans þrátt fyrir sigurleysi"
  },
+ "eb01a9df8d71f3cf": {
+  "category": "erlent",
+  "excerpt": "A village in England has created a social care community based on communal living and shared responsibility. Could it catch on? The post What if we stop treating social care like a service? This village shows the way appeared first on Positive News .",
+  "id": "eb01a9df8d71f3cf",
+  "image": "https://www.positive.news/wp-content/uploads/2026/11/iStock-2180754914.jpg",
+  "importance": 4,
+  "lang": "en",
+  "link": "https://www.positive.news/society/what-if-we-stopped-treating-social-care-like-a-service/",
+  "published": 1793716455,
+  "score": 7,
+  "source": "Positive News",
+  "summary_is": "Í þorpi á Englandi hefur verið komið á fót samfélagi um félagslega umönnun. Fyrirkomulagið byggist á sambúð og sameiginlegri ábyrgð.",
+  "title": "What if we stop treating social care like a service? This village shows the way",
+  "title_is": "Þorp á Englandi byggir samfélag um sameiginlega umönnun"
+ },
  "eb406f40b7793fe6": {
   "category": "ithrottir",
   "excerpt": "Íslandsmót ÍF í boccia fer fram í á Selfossi um helgina. Liðin marseruðu í íþróttasalinn undir trommuslætti en mótið var formlega sett í íþróttahúsinu Iðu af Braga Bjarnasyni, bæjarstjóra í Árborg. Mótið er haldið á Selfossi í tilefni af 40 ára afmæli Íþróttafélagsins Suðra, sem er félag fyrir fatlaða á Suðurlandi. Keppt er bæði í Iðu og íþróttahúsi Vallaskóla en um einstaklingskeppni er að ræða. Íslandsmót ÍF í boccia fór fram um helgina. Mótið er í ár í umsjón íþróttafélagsins Suðra, sem fagnar 40 ára afmæli sínu í ár. Tæplega 200 keppendur mættu til leiks og forsetahjónin litu við. Frú Halla Tómasdóttir, forseti Íslands og maður hennar, Björn Skúlason mættu í hádeginu til að fylgjast með ",
@@ -2248,6 +2398,36 @@
   "summary_is": "Tæplega 200 keppendur mættu á Íslandsmót ÍF í boccia á Selfossi. Mótið er haldið í tilefni af 40 ára afmæli Íþróttafélagsins Suðra, félags fyrir fatlað fólk á Suðurlandi.",
   "title": "Margt um manninn á Íslandsmóti ÍF í boccia",
   "title_is": "Tæplega 200 keppendur á Íslandsmóti ÍF í boccia"
+ },
+ "ec874ad0b6f2a829": {
+  "category": "laekningar",
+  "excerpt": "Pictured here enjoying jokes and a juice box, Trevor Bergman has now successfully donated his ultra-rare blood at all 85 Australian donation centers. While on his journey, Bergman donated blood 545 times, helping patients from virtually every corner of the land down under. The 59-year-old police officer is one of 150 Australians known to carry […] The post He Donated His Ultra-rare Blood 545 Times While Visiting Every Blood Bank in Australia appeared first on Good News Network .",
+  "id": "ec874ad0b6f2a829",
+  "image": "https://www.goodnewsnetwork.org/wp-content/uploads/2026/11/supplied-to-ABC-News-by-Trevor-Bergman.jpg",
+  "importance": 6,
+  "lang": "en",
+  "link": "https://www.goodnewsnetwork.org/ultra-rare-blood-carrier-finishes-grand-tour-around-australia-to-donate-at-all-85-blood-banks/",
+  "published": 1793723435,
+  "score": 9,
+  "source": "Good News Network",
+  "summary_is": "Ástralinn Trevor Bergman hefur gefið blóð 545 sinnum og komið á allar 85 blóðgjafastöðvar Ástralíu. Hann er einn af 150 Áströlum sem vitað er að bera þessa afar sjaldgæfu tegund blóðs og hafa gjafir hans hjálpað sjúklingum víða um land.",
+  "title": "He Donated His Ultra-rare Blood 545 Times While Visiting Every Blood Bank in Australia",
+  "title_is": "Hefur gefið sjaldgæft blóð 545 sinnum"
+ },
+ "ee39a1de9b16ef3d": {
+  "category": "erlent",
+  "excerpt": "A former Los Angeles gang member, a former skinhead and a former radical Islamist walk into a youth center. What sounds like the setup for an uneasy joke is at the core of Farah Pandith’s work: Put people who might otherwise never share a room in front of young people;... The post The Counter-Extremism Expert Building Our Capacity for Compassion appeared first on Reasons to be Cheerful .",
+  "id": "ee39a1de9b16ef3d",
+  "image": "https://reasonstobecheerful.world/wp-content/uploads/2026/11/U.S._Special_Representative_to_Muslim_Communities_Farah_Pandith_visits_Pesantren_Sirojul_Munir_in_Bekasi_6025301458.jpg",
+  "importance": 5,
+  "lang": "en",
+  "link": "https://reasonstobecheerful.world/counter-extremism-expert-farah-pandith-compassion-rebuilding-connection/",
+  "published": 1793718467,
+  "score": 7,
+  "source": "Reasons to be Cheerful",
+  "summary_is": "Farah Pandith vinnur að því að leiða saman fólk sem annars gæti aldrei hist og kynna það fyrir ungu fólki í félagsmiðstöð. Meðal þeirra eru fyrrverandi meðlimur götugengis í Los Angeles, fyrrverandi skinnhaus og fyrrverandi róttækur íslamisti.",
+  "title": "The Counter-Extremism Expert Building Our Capacity for Compassion",
+  "title_is": "Leiðir ólíkt fólk saman í starfi með ungu fólki"
  },
  "ef7c81aed97457af": {
   "category": "laekningar",
@@ -2398,6 +2578,21 @@
   "summary_is": "Andri Nikolaysson Mateev varði titil sinn á opna Norðurlandamótinu í skylmingum eftir sigur á Emil Ísleifi Sumarliðasyni í úrslitum. Þrír íslenskir keppendur komust í undanúrslit og Andri stefnir á Ólympíuleikana 2028.",
   "title": "Andri varði titilinn og Anna Edda vann sinn fyrsta",
   "title_is": "Andri varði Norðurlandatitil sinn í skylmingum"
+ },
+ "fc39e7480c4b5f61": {
+  "category": "dyralif",
+  "excerpt": "Rio Tinto is jointly funding a A$28m \"toad containment zoe\" to protect the Pilbara region.",
+  "id": "fc39e7480c4b5f61",
+  "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/1be5/live/c655d960-d770-11f1-a956-ff083523ef77.jpg",
+  "importance": 6,
+  "lang": "en",
+  "link": "https://www.bbc.co.uk/news/articles/c3dxw8p99ervo?at_medium=RSS&at_campaign=rss",
+  "published": 1793718301,
+  "score": 7,
+  "source": "BBC",
+  "summary_is": "Rio Tinto tekur þátt í að fjármagna aðgerðir til að halda reyrtöskum frá Pilbara-héraði í Ástralíu. Verkefnið kostar 28 milljónir ástralskra dala og er ætlað að vernda svæðið.",
+  "title": "Mining giant joins fight to stop killer toad march across Australia",
+  "title_is": "Fjármagna aðgerðir til að verja Pilbara fyrir reyrtöskum"
  },
  "fd379db8ca0c2907": {
   "category": "laekningar",
