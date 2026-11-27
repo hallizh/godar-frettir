@@ -434,21 +434,6 @@
   "title": "Scientists discover a bacterial defense so strange they thought it was broken",
   "title_is": "Óvenjulegt varnarkerfi baktería uppgötvað"
  },
- "3801be1b1e84abae": {
-  "category": "visindi",
-  "excerpt": "Scientists at McGill University have discovered a surprising new ability of immune cells that could change how we understand long-term immunity. Researchers found that T cells can actually sense how stiff their surrounding tissues are, using these physical signals to help determine whether they develop into long-lasting memory cells that protect against future infections.",
-  "id": "3801be1b1e84abae",
-  "image": "https://www.sciencedaily.com/images/1920/car-t-cell-therapy-attacking-cancer-cell.webp",
-  "importance": 7,
-  "lang": "en",
-  "link": "https://www.sciencedaily.com/releases/2026/10/261026225617.htm",
-  "published": 1793148894,
-  "score": 8,
-  "source": "ScienceDaily",
-  "summary_is": "Vísindamenn við McGill-háskóla hafa uppgötvað að T-frumur geta skynjað hversu stífir vefirnir umhverfis þær eru. Frumurnar nýta þessi boð meðal annars til að ákvarða hvort þær þróast í langlífar minnisfrumur sem veita vörn gegn sýkingum síðar.",
-  "title": "Scientists discover the immune system’s hidden sense of touch",
-  "title_is": "Ónæmisfrumur skynja stífleika vefja"
- },
  "3a441115c6c970b8": {
   "category": "visindi",
   "excerpt": "A surprising new discovery suggests that fear may cause the brain to blur the line between danger and safety rather than distinguish them more clearly. By observing brain activity in mice using augmented reality, scientists found that memories of threatening and harmless environments began to overlap, potentially allowing faster responses to danger. This \"better safe than sorry\" survival mechanism could help explain why people with anxiety or PTSD sometimes experience intense fear in completely safe situations.",
@@ -1393,21 +1378,6 @@
   "summary_is": "Göngustígar sem lagðir hafa verið í jaðri Stykkishólms undanfarin ár auðvelda aðgengi að náttúrusvæði og gróskumiklum skógi. Svæðið nýtur vaxandi vinsælda til útivistar meðal heimamanna og ferðamanna.",
   "title": "Göngu­stígar greiða leið um falda perlu við Stykkis­hólm",
   "title_is": "Göngustígar bæta aðgengi að útivistarsvæði við Stykkishólm"
- },
- "a4696d32ebcc490c": {
-  "category": "laekningar",
-  "excerpt": "A new clinical trial suggests that a simple daily fiber supplement could significantly reduce knee osteoarthritis pain, improve muscle strength, and make the body less sensitive to pain. Researchers discovered that the benefits may be linked to changes in gut bacteria and the hormone GLP-1, revealing a promising new approach to arthritis relief.",
-  "id": "a4696d32ebcc490c",
-  "image": "https://www.sciencedaily.com/images/1920/knee-joint-pain-woman.webp",
-  "importance": 7,
-  "lang": "en",
-  "link": "https://www.sciencedaily.com/releases/2026/10/261027230715.htm",
-  "published": 1793159769,
-  "score": 8,
-  "source": "ScienceDaily",
-  "summary_is": "Ný klínísk rannsókn bendir til þess að dagleg trefjauppbót geti dregið úr verkjum vegna slitgigtar í hné og bætt vöðvastyrk. Rannsakendur telja að ávinningurinn kunni að tengjast breytingum á þarmabakteríum og hormóninu GLP-1.",
-  "title": "A simple daily fiber supplement reduced arthritis pain and improved strength",
-  "title_is": "Trefjauppbót dró úr verkjum í klínískri rannsókn"
  },
  "a4b6a74704ad1737": {
   "category": "ithrottir",
